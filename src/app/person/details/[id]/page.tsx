@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { getMediaTitle, getPersonPageData } from "@/lib/tmdb";
 import PersonDetails from "@/components/pages/PersonDetails";
 
