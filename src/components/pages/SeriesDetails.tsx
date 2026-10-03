@@ -1,8 +1,8 @@
 "use client";
 
 import { Play } from "lucide-react";
-import CardImage from "./CardImage";
-import VoteAveregeItem from "./VoteAveregeItem";
+import CardImage from "../CardImage";
+import VoteAveregeItem from "../VoteAveregeItem";
 import Link from "@/components/SafeLink";
 import { formateDate, formateDateDetails, formateYear } from "@/lib/utils";
 import {
@@ -18,8 +18,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import CardPersonMovieDetail from "./CardPersonMovieDetail";
-import ScrollableCarousel from "./ScrollableCarousel";
+import CardPersonMovieDetail from "../CardPersonMovieDetail";
+import ScrollableCarousel from "../ScrollableCarousel";
 const svgFacebook = "/assets/facebook.svg";
 const svgTwitter = "/assets/twitter.svg";
 const svgInstagram = "/assets/instagram.svg";
@@ -30,7 +30,7 @@ const calender = "/assets/calender.svg";
 const noVideoAvaible = "/assets/no-video-available.jpg";
 const imageNotFound = "/assets/imageNotFound.png";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
-import MoviesRecommended from "./MoviesRecommended";
+import MoviesRecommended from "../MoviesRecommended";
 import type { SeriePageData } from "@/lib/tmdb";
 
 type Props = { data: SeriePageData };
