@@ -31,15 +31,17 @@ const PersonDetails = ({ data }: Props) => {
             <div className="flex justify-center sm:justify-center md:justify-center lg:justify-start mt-8 ">
               <TooltipProvider>
                 <Tooltip>
-                  <TooltipTrigger asChild>
-                    {externalIds.facebook_id ? (
-                      <Link href={`https://www.facebook.com/${externalIds.facebook_id}`}>
+                  {externalIds.facebook_id ? (
+                    <Link href={`https://www.facebook.com/${externalIds.facebook_id}`}>
+                      <TooltipTrigger asChild>
                         <img src={svgFacebook} alt="facebook" className="w-9 mr-2" />
-                      </Link>
-                    ) : (
+                      </TooltipTrigger>
+                    </Link>
+                  ) : (
+                    <TooltipTrigger asChild>
                       <img src={svgFacebook} alt="facebook" className="w-9 mr-2" />
-                    )}
-                  </TooltipTrigger>
+                    </TooltipTrigger>
+                  )}
                   <TooltipContent className="bg-slate-800 rounded-sm py-1 px-3 text-white">
                     <p>Visitar Facebook</p>
                   </TooltipContent>
@@ -48,15 +50,17 @@ const PersonDetails = ({ data }: Props) => {
 
               <TooltipProvider>
                 <Tooltip>
-                  <TooltipTrigger asChild>
-                    {externalIds.twitter_id ? (
-                      <Link href={`https://twitter.com/${externalIds.twitter_id}`}>
+                  {externalIds.twitter_id ? (
+                    <Link href={`https://twitter.com/${externalIds.twitter_id}`}>
+                      <TooltipTrigger asChild>
                         <img src={svgTwitter} alt="twitter" className="w-9 ml-2 mr-2" />
-                      </Link>
-                    ) : (
+                      </TooltipTrigger>
+                    </Link>
+                  ) : (
+                    <TooltipTrigger asChild>
                       <img src={svgTwitter} alt="twitter" className="w-9 ml-2 mr-2" />
-                    )}                    
-                  </TooltipTrigger>
+                    </TooltipTrigger>
+                  )}                    
                   <TooltipContent className="bg-slate-800 rounded-sm py-1 px-3 text-white">
                     <p>Visitar Twitter</p>
                   </TooltipContent>
@@ -65,15 +69,17 @@ const PersonDetails = ({ data }: Props) => {
 
               <TooltipProvider>
                 <Tooltip>
-                  <TooltipTrigger asChild>
-                    {externalIds.instagram_id ? (
-                      <Link href={`https://instagram.com/${externalIds.instagram_id}`}>
+                  {externalIds.instagram_id ? (
+                    <Link href={`https://instagram.com/${externalIds.instagram_id}`}>
+                      <TooltipTrigger asChild>
                         <img src={svgInstagram} alt="instagram" className="w-9 mr-2" />
-                      </Link>
-                    ) : (
+                      </TooltipTrigger>
+                    </Link>
+                  ) : (
+                    <TooltipTrigger asChild>
                       <img src={svgInstagram} alt="instagram" className="w-9 mr-2" />
-                    )}                     
-                  </TooltipTrigger>
+                    </TooltipTrigger>
+                  )}                     
                   <TooltipContent className="bg-slate-800 rounded-sm py-1 px-3 text-white">
                     <p>Visitar Instagram</p>
                   </TooltipContent>

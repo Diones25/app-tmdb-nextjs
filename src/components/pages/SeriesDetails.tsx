@@ -317,17 +317,17 @@ const SeriesDetails = ({ data }: Props) => {
               <div className="flex justify-center md:justify-start mt-1">
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      {externalIds.facebook_id ? (
-                        <>
-                          <Link href={`https://www.facebook.com/${externalIds.facebook_id}`}>
-                            <img src={svgFacebook} alt="facebook" className="w-9 mr-1" />
-                          </Link>
-                        </>
-                      ) : (
+                    {externalIds.facebook_id ? (
+                      <Link href={`https://www.facebook.com/${externalIds.facebook_id}`}>
+                        <TooltipTrigger asChild>
+                          <img src={svgFacebook} alt="facebook" className="w-9 mr-1" />
+                        </TooltipTrigger>
+                      </Link>
+                    ) : (
+                      <TooltipTrigger asChild>
                         <img src={svgFacebook} alt="facebook" className="w-9 mr-1" />
-                      )}
-                    </TooltipTrigger>
+                      </TooltipTrigger>
+                    )}
                     <TooltipContent>
                       <p>Visitar Facebook</p>
                     </TooltipContent>
@@ -336,17 +336,17 @@ const SeriesDetails = ({ data }: Props) => {
 
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      {externalIds.twitter_id ? (
-                        <>
-                          <Link href={`https://twitter.com/${externalIds.twitter_id}`}>
-                            <img src={svgTwitter} alt="twitter" className="w-9 ml-1" />
-                          </Link>
-                        </>
-                      ) : (
+                    {externalIds.twitter_id ? (
+                      <Link href={`https://twitter.com/${externalIds.twitter_id}`}>
+                        <TooltipTrigger asChild>
+                          <img src={svgTwitter} alt="twitter" className="w-9 ml-1" />
+                        </TooltipTrigger>
+                      </Link>
+                    ) : (
+                      <TooltipTrigger asChild>
                         <img src={svgTwitter} alt="twitter" className="w-9 ml-1" />
-                      )}
-                    </TooltipTrigger>
+                      </TooltipTrigger>
+                    )}
                     <TooltipContent>
                       <p>Visitar Twitter</p>
                     </TooltipContent>
@@ -355,17 +355,17 @@ const SeriesDetails = ({ data }: Props) => {
 
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      {externalIds.instagram_id ? (
-                        <>
-                          <Link href={`https://instagram.com/${externalIds.instagram_id}`}>
-                            <img src={svgInstagram} alt="instagram" className="w-9 mr-1" />
-                          </Link>
-                        </>
-                      ) : (
+                    {externalIds.instagram_id ? (
+                      <Link href={`https://instagram.com/${externalIds.instagram_id}`}>
+                        <TooltipTrigger asChild>
+                          <img src={svgInstagram} alt="instagram" className="w-9 mr-1" />
+                        </TooltipTrigger>
+                      </Link>
+                    ) : (
+                      <TooltipTrigger asChild>
                         <img src={svgInstagram} alt="instagram" className="w-9 mr-1" />
-                      )}
-                    </TooltipTrigger>
+                      </TooltipTrigger>
+                    )}
                     <TooltipContent>
                       <p>Visitar Instagram</p>
                     </TooltipContent>
@@ -374,17 +374,17 @@ const SeriesDetails = ({ data }: Props) => {
 
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      {externalIds.imdb_id ? (
-                        <>
-                          <Link href={`https://www.imdb.com/title/${externalIds.imdb_id}`}>
-                            <img src={svgIMDB} alt="imdb" className="w-9 ml-1" />
-                          </Link>
-                        </>
-                      ) : (
+                    {externalIds.imdb_id ? (
+                      <Link href={`https://www.imdb.com/title/${externalIds.imdb_id}`}>
+                        <TooltipTrigger asChild>
+                          <img src={svgIMDB} alt="imdb" className="w-9 ml-1" />
+                        </TooltipTrigger>
+                      </Link>
+                    ) : (
+                      <TooltipTrigger asChild>
                         <img src={svgIMDB} alt="imdb" className="w-9 ml-1" />
-                      )} 
-                    </TooltipTrigger>
+                      </TooltipTrigger>
+                    )}
                     <TooltipContent>
                       <p>Visitar IMDB</p>
                     </TooltipContent>
@@ -393,17 +393,17 @@ const SeriesDetails = ({ data }: Props) => {
                 
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      {serie.homepage ? (
-                        <>
-                          <Link href={serie.homepage}>
-                            <img src={link_HomePage} alt="homePage" className="w-9 ml-1" />
-                          </Link>
-                        </>
-                      ) : (
+                    {serie.homepage ? (
+                      <Link href={serie.homepage}>
+                        <TooltipTrigger asChild>
+                          <img src={link_HomePage} alt="homePage" className="w-9 ml-1" />
+                        </TooltipTrigger>
+                      </Link>
+                    ) : (
+                      <TooltipTrigger asChild>
                         <img src={link_HomePage} alt="homePage" className="w-9 ml-1" />
-                      )}
-                    </TooltipTrigger>
+                      </TooltipTrigger>
+                    )}
                     <TooltipContent>
                       <p>Visitar página inicial</p>
                     </TooltipContent>
