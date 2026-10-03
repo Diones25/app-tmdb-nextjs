@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import SeriesDetails from "@/components/SeriesDetails";
 import { getMediaTitle, getSeriePageData } from "@/lib/tmdb";
+import SeriesDetails from "@/components/pages/SeriesDetails";
 
 type Props = { params: Promise<{ id: string }> };
 

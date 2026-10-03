@@ -5,10 +5,10 @@ type Props = {
   title: string;
 }
 
-const CardMoviePerson = ({ key, poster_path, title }: Props) => {
+const CardMoviePerson = ({ poster_path, title }: Props) => {
   return (
     <>
-      <div key={key} className="">
+      <div className="">
         <div className="w-[130px]">
           <img className="w-[130px] h-[195px] rounded-sm" src={poster_path} alt="" />
           <div className="mt-2 text-black">

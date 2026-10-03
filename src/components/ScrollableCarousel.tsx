@@ -6,9 +6,21 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 type Props = {
   children: ReactNode;
   className?: string;
+  /** Quanto rolar a cada clique. Se não vier, usa ~85% da largura visível. */
+  scrollAmount?: number;
+  /** Texto de acessibilidade da seta esquerda. */
+  ariaLabelLeft?: string;
+  /** Texto de acessibilidade da seta direita. */
+  ariaLabelRight?: string;
 };
 
-const ScrollableCarousel = ({ children, className = "" }: Props) => {
+const ScrollableCarousel = ({
+  children,
+  className = "",
+  scrollAmount,
+  ariaLabelLeft = "Rolar para a esquerda",
+  ariaLabelRight = "Rolar para a direita",
+}: Props) => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -24,8 +36,12 @@ const ScrollableCarousel = ({ children, className = "" }: Props) => {
   const scrollBy = (direction: "left" | "right") => {
     const el = scrollerRef.current;
     if (!el) return;
-    const amount = Math.max(320, Math.floor(el.clientWidth * 0.85));
-    el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
+    const amount =
+      scrollAmount ?? Math.max(320, Math.floor(el.clientWidth * 0.85));
+    el.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -45,7 +61,7 @@ const ScrollableCarousel = ({ children, className = "" }: Props) => {
           type="button"
           onClick={() => scrollBy("left")}
           className={`${buttonClasses} left-2`}
-          aria-label="Rolar para a esquerda"
+          aria-label={ariaLabelLeft}
         >
           <ChevronLeft className="m-auto" />
         </button>
@@ -56,7 +72,7 @@ const ScrollableCarousel = ({ children, className = "" }: Props) => {
           type="button"
           onClick={() => scrollBy("right")}
           className={`${buttonClasses} right-2`}
-          aria-label="Rolar para a direita"
+          aria-label={ariaLabelRight}
         >
           <ChevronRight className="m-auto" />
         </button>

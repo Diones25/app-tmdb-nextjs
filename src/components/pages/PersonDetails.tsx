@@ -2,13 +2,15 @@
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import Link from "@/components/SafeLink";
-import CardMoviePerson from "./CardMoviePerson";
+import CardMoviePerson from "../CardMoviePerson";
+import ScrollableCarousel from "../ScrollableCarousel";
 const svgFacebook = "/assets/facebook.svg";
 const svgTwitter = "/assets/twitter.svg";
 const svgInstagram = "/assets/instagram.svg";
 import { formateDate, returnAge } from "@/lib/utils";
 const imageNotFound = "/assets/imageNotFound.png";
 import type { PersonPageData } from "@/lib/tmdb";
+
 
 type Props = { data: PersonPageData };
 
@@ -31,11 +33,9 @@ const PersonDetails = ({ data }: Props) => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     {externalIds.facebook_id ? (
-                      <>
-                        <Link href={`https://www.facebook.com/${externalIds.facebook_id}`}>
-                          <img src={svgFacebook} alt="facebook" className="w-9 mr-2" />
-                        </Link>
-                      </>
+                      <Link href={`https://www.facebook.com/${externalIds.facebook_id}`}>
+                        <img src={svgFacebook} alt="facebook" className="w-9 mr-2" />
+                      </Link>
                     ) : (
                       <img src={svgFacebook} alt="facebook" className="w-9 mr-2" />
                     )}
@@ -50,11 +50,9 @@ const PersonDetails = ({ data }: Props) => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     {externalIds.twitter_id ? (
-                      <>
-                        <Link href={`https://twitter.com/${externalIds.twitter_id}`}>
-                          <img src={svgTwitter} alt="twitter" className="w-9 ml-2 mr-2" />
-                        </Link>
-                      </>
+                      <Link href={`https://twitter.com/${externalIds.twitter_id}`}>
+                        <img src={svgTwitter} alt="twitter" className="w-9 ml-2 mr-2" />
+                      </Link>
                     ) : (
                       <img src={svgTwitter} alt="twitter" className="w-9 ml-2 mr-2" />
                     )}                    
@@ -69,11 +67,9 @@ const PersonDetails = ({ data }: Props) => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     {externalIds.instagram_id ? (
-                      <>
-                        <Link href={`https://instagram.com/${externalIds.instagram_id}`}>
-                          <img src={svgInstagram} alt="instagram" className="w-9 mr-2" />
-                        </Link>
-                      </>
+                      <Link href={`https://instagram.com/${externalIds.instagram_id}`}>
+                        <img src={svgInstagram} alt="instagram" className="w-9 mr-2" />
+                      </Link>
                     ) : (
                       <img src={svgInstagram} alt="instagram" className="w-9 mr-2" />
                     )}                     
@@ -98,7 +94,8 @@ const PersonDetails = ({ data }: Props) => {
 
             <div className="sm:w-[20rem] md:w-[38rem] lg:min-w-[30rem] xl:w-[55rem]">
               <p className="font-semibold text-xl mb-1">Conhecido(a) por</p>
-              <div className="flex overflow-x-scroll overflow-y-hidden gap-4 pb-3">
+              
+              <ScrollableCarousel className="gap-4 pb-3">
                 {credits.length > 0 &&
                   <>
                   {credits.map(item => (
@@ -106,7 +103,7 @@ const PersonDetails = ({ data }: Props) => {
                         <Link href={`/details/${item.id}`}>
                           <CardMoviePerson
                             key={item.id}
-                          poster_path={item.poster_path ? `https://media.themoviedb.org/t/p/w130_and_h195_face${item.poster_path}` : imageNotFound}
+                            poster_path={item.poster_path ? `https://media.themoviedb.org/t/p/w130_and_h195_face${item.poster_path}` : imageNotFound}
                             title={item.title}
                           />
                         </Link>  
@@ -114,7 +111,7 @@ const PersonDetails = ({ data }: Props) => {
                     ))}
                   </>
                 }
-              </div>
+              </ScrollableCarousel>
             </div>
 
           </div>
