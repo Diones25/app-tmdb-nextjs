@@ -392,7 +392,7 @@ const MoviesDetails = ({ data }: Props) => {
                 <>
                   <div className="mt-6">
                     <h1 className="text-black text-2xl font-semibold">Recomendações</h1>
-                    <ScrollableCarousel className="gap-4 pb-6 mt-4">
+                    <ScrollableCarousel className="gap-4 pb-6 mt-4" mediaHeight={140}>
                       {recommended.map(item => (
                         <Link href={`/details/${item.id}`} key={item.id}>
                           <MoviesRecommended

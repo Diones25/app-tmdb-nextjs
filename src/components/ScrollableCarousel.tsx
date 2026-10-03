@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
@@ -12,6 +13,14 @@ type Props = {
   ariaLabelLeft?: string;
   /** Texto de acessibilidade da seta direita. */
   ariaLabelRight?: string;
+  /**
+   * Altura (px) da mídia do card. Quando informada, as setas centralizam no
+   * meio da imagem (ignorando título e padding). Sem ela, centralizam no
+   * meio do carrossel inteiro (o padrão).
+   */
+  mediaHeight?: number;
+  /** Classes extras para ajuste fino das setas. */
+  arrowCenterClassName?: string;
 };
 
 const ScrollableCarousel = ({
@@ -20,6 +29,8 @@ const ScrollableCarousel = ({
   scrollAmount,
   ariaLabelLeft = "Rolar para a esquerda",
   ariaLabelRight = "Rolar para a direita",
+  mediaHeight,
+  arrowCenterClassName,
 }: Props) => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -51,8 +62,14 @@ const ScrollableCarousel = ({
     return () => window.removeEventListener("resize", onResize);
   }, [children]);
 
-  const buttonClasses =
-    "absolute top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-gray-200/90 text-gray-800 shadow-md hover:bg-gray-200";
+  // Ponto vertical das setas: meio da mídia (se informada) ou meio do carrossel.
+  const arrowTop = mediaHeight ? `${mediaHeight / 2}px` : "50%";
+
+  const buttonClasses = cn(
+    "absolute top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center",
+    "rounded-full bg-gray-200/90 text-gray-800 shadow-md hover:bg-gray-200",
+    arrowCenterClassName
+  );
 
   return (
     <div className="relative">
@@ -60,10 +77,11 @@ const ScrollableCarousel = ({
         <button
           type="button"
           onClick={() => scrollBy("left")}
-          className={`${buttonClasses} left-2`}
+          className={cn(buttonClasses, "left-2")}
+          style={{ top: arrowTop }}
           aria-label={ariaLabelLeft}
         >
-          <ChevronLeft className="m-auto" />
+          <ChevronLeft />
         </button>
       ) : null}
 
@@ -71,10 +89,11 @@ const ScrollableCarousel = ({
         <button
           type="button"
           onClick={() => scrollBy("right")}
-          className={`${buttonClasses} right-2`}
+          className={cn(buttonClasses, "right-2")}
+          style={{ top: arrowTop }}
           aria-label={ariaLabelRight}
         >
-          <ChevronRight className="m-auto" />
+          <ChevronRight />
         </button>
       ) : null}
 

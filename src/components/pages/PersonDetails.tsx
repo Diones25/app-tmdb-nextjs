@@ -101,7 +101,7 @@ const PersonDetails = ({ data }: Props) => {
             <div className="sm:w-[20rem] md:w-[38rem] lg:min-w-[30rem] xl:w-[55rem]">
               <p className="font-semibold text-xl mb-1">Conhecido(a) por</p>
               
-              <ScrollableCarousel className="gap-4 pb-3">
+              <ScrollableCarousel className="gap-4 pb-3" mediaHeight={195}>
                 {credits.length > 0 &&
                   <>
                   {credits.map(item => (
