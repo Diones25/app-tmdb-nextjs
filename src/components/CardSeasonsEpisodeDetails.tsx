@@ -127,12 +127,12 @@ const CardSeasonsEpisodeDetails = ({ still_path, name, star, vote_average, air_d
                           <iframe
                             id="EmbedderContainer"
                             className="w-full h-[28rem]"
-                            src={`https://fembed.sx/e/${series_id}/${season_number}-${episode_number}`}
+                            src={`https://fembed.lol/serie/${series_id}/${season_number}-${episode_number}`}
                             frameBorder="0"
                             allowFullScreen
                           >
                           </iframe>
-                          <Link className="mt-3" href={`https://fembed.sx/e/${series_id}/${season_number}-${episode_number}`} target="_blank" rel="noopener noreferrer">
+                          <Link className="mt-3" href={`https://fembed.lol/serie/${series_id}/${season_number}-${episode_number}`} target="_blank" rel="noopener noreferrer">
                             <Button>Abrir no Fembed</Button>
                           </Link>
                         </div>

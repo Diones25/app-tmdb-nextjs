@@ -197,12 +197,12 @@ const MoviesDetails = ({ data }: Props) => {
                                     <iframe
                                       id="EmbedderContainer"
                                       className="w-full h-[28rem]"
-                                      src={`https://fembed.sx/e/${externalIds.imdb_id}`}
+                                      src={`https://fembed.lol/filme/${externalIds.imdb_id}`}
                                       frameBorder="0"
                                       allowFullScreen
                                     >
                                     </iframe>
-                                    <Link className="mt-3" href={`https://fembed.sx/e/${externalIds.imdb_id}`} target="_blank" rel="noopener noreferrer">
+                                    <Link className="mt-3" href={`https://fembed.lol/filme/${externalIds.imdb_id}`} target="_blank" rel="noopener noreferrer">
                                       <Button>Abrir no Fembed</Button>
                                     </Link>
                                   </div>
