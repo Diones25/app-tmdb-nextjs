@@ -58,7 +58,7 @@ const CardSeasonsDetails = ({ poster_path, urlImage,urlName, name, star, vote_av
                     {overview}
                   </>
                 ) : (
-                  <p>Sem descrição</p>
+                  <span>Sem descrição</span>
                 )}
               </p>
             </div>

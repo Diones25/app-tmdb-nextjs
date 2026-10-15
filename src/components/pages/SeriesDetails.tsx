@@ -211,7 +211,7 @@ const SeriesDetails = ({ data }: Props) => {
                                   {serie.seasons[0]?.overview}
                                 </>
                               ) : (
-                                <p>Sem descrição</p>
+                                <span>Sem descrição</span>
                               )}
                             </p>
                           </div>

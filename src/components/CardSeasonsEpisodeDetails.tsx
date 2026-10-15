@@ -73,7 +73,7 @@ const CardSeasonsEpisodeDetails = ({ still_path, name, star, vote_average, air_d
                     {overview}
                   </>
                 ) : (
-                  <p>Sem descrição</p>
+                  <span>Sem descrição</span>
                 )}
               </p>
             </div>
