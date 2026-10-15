@@ -168,13 +168,14 @@ const MoviesDetails = ({ data }: Props) => {
                               <Tabs defaultValue="player1" value={activeTab} onValueChange={setActiveTab}>
                                 <div className="flex items-center">                        
                                   <div className="m-auto md:m-0">
-                                    <TabsList className="grid w-full sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 bg-transparent border border-[#1BB293]">
+                                    <TabsList className="grid w-full sm:grid-cols-2 md:grid-cols-7 lg:grid-cols-7 bg-transparent border border-[#1BB293]">
                                       <TabsTrigger value="player1" className={activeTab === 'player1' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 1</TabsTrigger>
                                       <TabsTrigger value="player2" className={activeTab === 'player2' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 2</TabsTrigger>
                                       <TabsTrigger value="player3" className={activeTab === 'player3' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 3</TabsTrigger>
                                       <TabsTrigger value="player4" className={activeTab === 'player4' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 4</TabsTrigger>
                                       <TabsTrigger value="player5" className={activeTab === 'player5' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 5</TabsTrigger>
-                                      <TabsTrigger value="player6" className={activeTab === 'player6' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 6</TabsTrigger>                                        
+                                      <TabsTrigger value="player6" className={activeTab === 'player6' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 6</TabsTrigger>
+                                      <TabsTrigger value="player7" className={activeTab === 'player7' ? 'bg-gradient-to-r from-sky-500 to-green-500 text-white py-2 w-32' : 'py-2'}>Player 7</TabsTrigger>
                                     </TabsList>
                                   </div>
                                 </div>
@@ -253,6 +254,19 @@ const MoviesDetails = ({ data }: Props) => {
                                       id="EmbedderContainer"
                                       className="w-full h-[28rem]"
                                       src={`https://myembed.biz/filme/${externalIds.imdb_id}`}
+                                      frameBorder="0"
+                                      allowFullScreen
+                                    >
+                                    </iframe>
+                                  </div>
+                                </TabsContent>
+
+                                <TabsContent value="player7">
+                                  <div>
+                                    <iframe
+                                      id="EmbedderContainer"
+                                      className="w-full h-[28rem]"
+                                      src={`https://streambetter.shop/filme/${movie.id}`}
                                       frameBorder="0"
                                       allowFullScreen
                                     >
